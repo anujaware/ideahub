@@ -5,11 +5,18 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready -> 
+  $('#all').hide()
   #Idea filteration according to category
+  $('#see_all').click -> 
+    $('#all').hide()
+    $(".idea-box").show()
+
   $("h6 l").click ->
     cat = $(this).html()
     $(".idea-box").hide()
     $("." + cat).show()
+    $('#all').show()
+    $('#current_idea').html(cat)
 
   # Where there is change in the typeahead text box
   $('#idea_category_ids').on 'change', (e) -> 

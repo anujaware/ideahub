@@ -1,9 +1,13 @@
-.row.well
-  %table.table.table-striped
-    %thead
-      %tr
-        %th Idea
-        %th Scheduled at
-        %th Location
-    %tbody
-      =render :partial => :schedule, :collection => @schedules
+- if current_user.is_admin
+  .row.well
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Idea
+          %th Scheduled at
+          %th Location
+      %tbody
+        =render :partial => :schedule, :collection => @schedules
+- else
+  .container.idea-index
+    =render @schedules

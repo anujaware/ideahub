@@ -1,2 +1,8 @@
+- content_for :see_all_ideas do
+  .idea-container{:style => 'width:940px;float:left;padding-left:200px;'}
+    .pull-right
+      #all
+        %span.btn.btn-primary
+          #see_all.mouse-pointer See All
 .container.idea-index
   = render @ideas, participate: true
